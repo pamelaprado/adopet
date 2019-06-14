@@ -30,6 +30,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="contato.html">Entre em contato</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
             </ul>
         </div>
     </nav>
