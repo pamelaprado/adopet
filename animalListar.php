@@ -72,11 +72,11 @@
                                 echo '<td><p class="badge badge-primary">Aprovado</p></td>';
                             break;
                             case 2:
-                                echo '<td><p class="badge badge-success">Doado</p></td>';
-                            break;
-                            case 3:
                                 echo '<td><p class="badge badge-danger">Reprovado</p></td>';
                             break;
+                            case 3:
+                                echo '<td><p class="badge badge-success">Doado</p></td>';
+                            break;                            
                         }
                         echo '<td>
                                 <div class="row">
@@ -90,6 +90,7 @@
                                     <div class="col-md-2">
                                         <form action="..\App\controllers\AnimalController.php" method="POST">
                                             <input type="hidden" name="action" value="deletar">
+                                            <input type="hidden" name="id" value="' . $p['id'] . '">
                                             <button type="submit" class="btn btn-danger"><i class="material-icons">delete</i></button>
                                         </form>
                                     </div>

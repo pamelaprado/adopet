@@ -123,5 +123,41 @@ namespace App\Services
             }            
         }
 
+        public function delete($id){
+            try{
+                $this->conn = ConnectionService::connect();
+                $this->conn->beginTransaction();
+
+                $stmt = $this->conn->prepare("delete from solicitacao where idanimal = :id");
+                $stmt->execute([
+                    'id' => $id
+                ]);
+
+                $stmt = $this->conn->prepare("delete from animal where id = :id");
+                $stmt->execute([
+                    'id' => $id
+                ]);
+
+                $this->conn->commit();
+
+            }catch(Exception $e){                
+                $this->conn->rollBack();
+                throw $e->getMessage();
+            }
+        }
+
+        public function getAnimal($especie){
+            try{
+                $this->conn = ConnectionService::connect();
+                $stmt = $this->conn->prepare("select animal.id, animal.nome, animal.descricao, animal.idade, animal.sexo, animal.porte, animal.especie, animal.imagem, animal.situacao from animal where animal.especie = :especie and animal.situacao = 1");
+                $stmt->execute([
+                    ':especie' => $especie,
+                ]);
+                $rs = $stmt->fetchAll();
+                return $rs;
+            }catch(\Exception $e){
+                throw $e->getMessage();
+            }            
+        }
     }
 }

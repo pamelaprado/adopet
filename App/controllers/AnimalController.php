@@ -9,7 +9,7 @@ namespace App\Controllers
     session_start();    
     $service = new AnimalService();
     $service->validate($_POST, $_SESSION['usuario']);    
-    if(isset($_POST)){
+    if(isset($_POST)){                      
         switch($_POST['action']){
             case 'exibir':
                 $animal = $service->getById($_POST['id']);
@@ -24,6 +24,7 @@ namespace App\Controllers
                 $service->create();
             break;
             case 'deletar':
+                $service->delete($_POST['id']);
             break;
         }
     }   
