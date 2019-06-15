@@ -17,7 +17,7 @@ namespace App\Services
         private function login(){
             try{
                 $this->conn = ConnectionService::connect();
-                $stmt = $this->conn->prepare("select nome, sobrenome, email, acesso from usuario where email = :email and senha = :senha");
+                $stmt = $this->conn->prepare("select id, nome, sobrenome, email, acesso from usuario where email = :email and senha = :senha");
                 $stmt->execute([
                     'email' => $this->data['email'],
                     'senha' => $this->data['senha']
@@ -64,7 +64,7 @@ namespace App\Services
                         'senha' => base64_encode($post['senha']),
                         'acesso' => (isset($post['admin'])) ? 1 : 0
                     ];
-                }else{
+                }else if($post['action'] === "login"){
                     $this->login = true;
                     $this->data = [
                         'email' => $post['email'],

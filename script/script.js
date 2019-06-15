@@ -10,3 +10,27 @@ function SendDoacao(){
         alert("Iremos entrar em contato com você em breve, aguarde!");
     }
 }
+
+$(document).ready(function(){
+    /*
+    $('#logout').click(function(){
+        $.ajax({
+            method: "POST",
+            url: "..\\controllers\\LoginController.php",
+            data: {
+                nome: "Pedro",
+                email: "pedro@email.com"
+            },
+            beforeSend: function(){
+                console.log('enviando');
+            }
+        })
+        .done(function(msg){
+            console.log(msg);
+        })
+        .fail(function(jqXHR, textStatus, msg){
+            alert("Erro: " . msg );
+        })
+    })
+    */
+});

@@ -2,16 +2,26 @@
 
 namespace App\Controllers
 {   
-    //require_once('C:\\Projects\\adopet\\App\\services\\ConnectionService.php');
+    
     require_once($_SERVER['DOCUMENT_ROOT'] . '\\App\\services\\LoginService.php');
-
     use App\Services\LoginService;
 
     session_start();
 
+    if(isset($_POST['action']) && $_POST['action'] === 'logout'){
+        session_destroy();
+        header('location: ..\\..\\index.php');
+        exit;
+    }
+
+    if(!empty($_SESSION['usuario'])){
+        header('location: ..\\..\\index.php');
+        exit;
+    }
+    
     $service = new LoginService();
     $service->validate($_POST);
-    $usuario = $service->check();
+    $usuario = $service->check();    
 
     if(!empty($usuario)){        
         $_SESSION['usuario'] = $usuario;
@@ -20,8 +30,6 @@ namespace App\Controllers
         exit;
     }
 
-    header('location: ..\\..\\registrar.php');   
+    header('location: ..\\..\\registrar.php');
 }   
-
-
 ?>
