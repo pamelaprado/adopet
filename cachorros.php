@@ -14,14 +14,38 @@
             foreach($pets as $p){
                 echo '
                 <div class="col-sm-3 col-md-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="images/dogs/sofie.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
+                    <div class="card" style="width: 18rem;">';
+                echo '<img src="images\\' . $p['imagem'] . '" class="img-thumbnail">';
+                echo '<div class="card-body">
                             <h5 class="card-title">' . $p['nome'] . '</h5>';
-                echo        '<p class="card-text">' . $p['idade'] . ' mes(es)</p>';
-                echo        '<p class="card-text">Gênero: ' . $p['sexo']  . '</p>';
-                echo        '<p class="card-text">Porte: ' . $p['porte'] . '</p>';
-                echo        '<a href="http://www.adoteumfocinho.com.br/v1/index.asp?p=21&id=944&n=SOFIE&t=FILHOTES#.XLO73zBKjIU" class="btn btn-primary">Adotar!</a>
+                echo        '<p class="card-text">Idade: ' . $p['idade'] . ' mes(es)</p>';
+                
+                switch($p["sexo"]){
+                    case "M":
+                        echo '<p class="card-text">Gênero: Macho</p>';
+                    break;
+                    case "F":
+                        echo '<p class="card-text">Gênero: Fêmea</p>';
+                    break;                    
+                }
+                
+                switch($p["porte"]){
+                    case 1:
+                        echo '<p class="card-text">Porte: Pequeno</p>';
+                    break;
+                    case 2:
+                        echo '<p class="card-text">Porte: Médio</p>';
+                    break;
+                    case 3:
+                        echo '<p class="card-text">Porte: Grande</p>';
+                    break;
+                }
+                
+                echo        '<form action="..\App\controllers\AnimalController.php" method="POST">
+                                <input type="hidden" name="action" value="adotar">
+                                <input type="hidden" name="id" value="' . $p["id"] . '">
+                                <button type="submit" class="btn btn-primary">Adotar!</button>
+                            </form>   
                         </div>
                     </div>
                 </div>';

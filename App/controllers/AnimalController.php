@@ -3,10 +3,15 @@
 namespace App\Controllers
 {   
     
+    require_once($_SERVER['DOCUMENT_ROOT'] . '\\App\\services\\ArquivoService.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '\\App\\services\\AnimalService.php');
+    use App\Services\ArquivoService;
     use App\Services\AnimalService;
 
     session_start();    
+    $arquivoService = new ArquivoService();
+
+
     $service = new AnimalService();
     $service->validate($_POST, $_SESSION['usuario']);    
     if(isset($_POST)){                      
@@ -18,13 +23,23 @@ namespace App\Controllers
                 exit;
             break;
             case 'alterar':
+                $arquivoService->validate($_FILES);
+                $imagem = $arquivoService->upload($_SESSION['usuario']);
+                $service->setImagem($imagem);
                 $service->alter($_SESSION['animal']['id']);
             break;
             case 'criar':
+                $arquivoService->validate($_FILES);
+                $imagem = $arquivoService->upload($_SESSION['usuario']);
+                $service->setImagem($imagem);
                 $service->create();
             break;
             case 'deletar':
                 $service->delete($_POST['id']);
+            break;
+            case 'adotar':
+                $service->adotar($_POST['id']);
+                header('location: ..\\..\\index.php');
             break;
         }
     }   

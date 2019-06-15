@@ -14,11 +14,11 @@
                 <div class="form-group">
                     <input type="hidden" name="action" value="login">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="email@domain.com" name="email">
+                    <input type="email" class="form-control" id="email" placeholder="email@domain.com" name="email" required="required">
                 </div>
                 <div class="form-group">                        
                     <label for="senha">Senha</label>
-                    <input type="password" class="form-control" id="senha" name="senha">
+                    <input type="password" class="form-control" id="senha" name="senha" required="required">
                 </div>
                 <button type="submit" class="btn btn-primary">Entrar</button>
                 <a href="registrar.php" class="btn btn-primary">

@@ -16,25 +16,25 @@
                         <div class="form-group">
                             <input type="hidden" name="action" value="registrar">
                             <label for="nome">Nome</label>
-                            <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome">
+                            <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome" required="required">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="sobrenome">Sobrenome</label>
-                            <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome" name="sobrenome">
+                            <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome" name="sobrenome" required="required">
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="email@domain.com" name="email">
+                            <input type="email" class="form-control" id="email" placeholder="email@domain.com" name="email" required="required">
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">                        
                             <label for="senha">Senha</label>
-                            <input type="password" class="form-control" id="senha" name="senha">
+                            <input type="password" class="form-control" id="senha" name="senha" required="required">
                         </div>
                     </div>
                     <div class="col-md-12">

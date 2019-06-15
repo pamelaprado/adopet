@@ -10,7 +10,7 @@
 <div class="container-fluid">
     <div class="row justify-content-md-center">
         <div class="col-md-6">
-            <form action="App/controllers/AnimalController.php" method="POST">
+            <form action="App/controllers/AnimalController.php" method="POST" enctype="multipart/form-data">
                 <fieldset>
                     <legend>Doe seu Pet!</legend>
                     <p>Informe os dados do seu animalzinho...</p>
@@ -18,13 +18,13 @@
                         <div class="col-md-8">
                             <div class="form-group">
                                 <label for="nome">Nome:</label>
-                                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+                                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required="required">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="idade">Idade:</label>
-                                <input type="text" class="form-control" id="idade" name="idade" placeholder="Idade em meses">
+                                <input type="text" class="form-control" id="idade" name="idade" placeholder="Idade em meses" required="required">
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="especie">Animal:</label>
-                                <select class="form-control" id="especie" name="especie">
+                                <select class="form-control" id="especie" name="especie" required="required">
                                     <option value="1">Cachorro</option>
                                     <option value="2">Gato</option>
                                 </select>
@@ -41,7 +41,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="genero">Gênero:</label>
-                                <select class="form-control" id="genero" name="genero">
+                                <select class="form-control" id="genero" name="genero" required="required">
                                     <option value="M">Macho</option>
                                     <option value="F">Fêmea</option>
                                 </select>
@@ -50,7 +50,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="porte">Porte:</label>
-                                <select class="form-control" id="porte" name="porte">
+                                <select class="form-control" id="porte" name="porte" required="required">
                                     <option value="1">Pequeno</option>
                                     <option value="2">Médio</option>
                                     <option value="3">Grande</option>
@@ -78,7 +78,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="imagem">Imagem do Pet</label>
-                                <input type="file" class="form-control-file" id="imagem" name="imagem">
+                                <input type="file" class="form-control-file" id="imagem" name="imagem" required="required">
                             </div>
                         </div>
                     </div>

@@ -21,7 +21,6 @@ namespace App\Services
                 'sexo' => isset($post['genero']) ? $post['genero'] : null,
                 'porte' => isset($post['porte']) ? $post['porte'] : null,
                 'especie' => isset($post['especie']) ? $post['especie'] : null,
-                'imagem' => isset($post['imagem']) ? $post['imagem'] : null,
                 'narrativa' => isset($post['narrativa']) ? $post['narrativa'] : null,
             ];
 
@@ -43,7 +42,7 @@ namespace App\Services
                     ':sexo' => $this->data['sexo'],
                     ':porte' => $this->data['porte'],
                     ':especie' => $this->data['especie'],
-                    ':imagem' => '', //$this->data['imagem'],
+                    ':imagem' => $this->data['imagem'],
                     ':situacao' => 0,
                     ':idusuario' => $this->usuario['id'],
                 ]);
@@ -67,6 +66,7 @@ namespace App\Services
 
         public function alter($id){
             try{
+                $animal = $this->getById($id);                
                 $this->conn = ConnectionService::connect();
                 $this->conn->beginTransaction();
                 
@@ -78,7 +78,7 @@ namespace App\Services
                     ':sexo' => $this->data['sexo'],
                     ':porte' => $this->data['porte'],
                     ':especie' => $this->data['especie'],
-                    ':imagem' => '', //$this->data['imagem'],
+                    ':imagem' => is_null($this->data['imagem']) ? $animal['imagem'] : $this->data['imagem'],
                     ':id' => $id,
                 ]);
                 
@@ -158,6 +158,24 @@ namespace App\Services
             }catch(\Exception $e){
                 throw $e->getMessage();
             }            
+        }
+
+        public function setImagem($path){
+            $this->data['imagem'] = $path;
+        }
+
+        public function adotar($id){
+            try{
+                $this->conn = ConnectionService::connect();
+                
+                $stmt = $this->conn->prepare("update animal set situacao = :situacao where id = :id");
+                $stmt->execute([
+                    ':situacao' => 3,
+                    ':id' => $id,
+                ]);
+            }catch(\Exception $e){
+                throw $e->getMessage();
+            }
         }
     }
 }

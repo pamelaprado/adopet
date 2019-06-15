@@ -10,10 +10,15 @@
 <div class="container-fluid">
     <div class="row justify-content-md-center">
         <div class="col-md-6">
-            <form action="App/controllers/AnimalController.php" method="POST">
+            <form action="App/controllers/AnimalController.php" method="POST" enctype="multipart/form-data">
                 <fieldset>
                     <legend>Doe seu Pet!</legend>
                     <p>Informe os dados do seu animalzinho...</p>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-6">
+                            <img src="images\<?php echo $_SESSION['animal']['imagem']; ?>" class="img-thumbnail">
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-8">
                             <div class="form-group">

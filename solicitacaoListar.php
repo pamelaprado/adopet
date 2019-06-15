@@ -46,14 +46,14 @@
 
                         echo '<td>
                                 <div class="row">
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                         <form action="..\App\controllers\SolicitacaoController.php" method="POST">
                                             <input type="hidden" name="action" value="aprovar">
                                             <input type="hidden" name="id" value="' . $s["id"] . '">
                                             <button type="submit" class="btn btn-primary"><i class="material-icons">done</i></button>
                                         </form>    
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                         <form action="..\App\controllers\SolicitacaoController.php" method="POST">
                                             <input type="hidden" name="action" value="reprovar"> 
                                             <input type="hidden" name="id" value="' . $s["id"] . '">
@@ -63,7 +63,7 @@
                                 </div>
                             </td>';
                         
-                            echo '</tr>';
+                        echo '</tr>';
                     }
                     ?>
                 </tbody>
