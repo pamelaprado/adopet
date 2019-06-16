@@ -2,8 +2,8 @@
 
 namespace App\Controllers
 {   
-    
-    require_once($_SERVER['DOCUMENT_ROOT'] . '\\App\\services\\LoginService.php');
+    set_include_path($_SERVER['DOCUMENT_ROOT']);
+    require_once('App\\services\\LoginService.php');
     use App\Services\LoginService;
 
     session_start();

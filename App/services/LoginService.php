@@ -3,8 +3,8 @@
 namespace App\Services
 {   
     //require_once('C:\\Projects\\adopet\\App\\services\\ConnectionService.php');
-    require_once($_SERVER['DOCUMENT_ROOT'] . '\\App\\services\\ConnectionService.php');
-    require_once($_SERVER['DOCUMENT_ROOT'] . '\\App\\Usuario.php');
+    require_once('App\\services\\ConnectionService.php');
+    require_once('App\\Usuario.php');
 
     use App\Services\ConnectionService;
     use App\Usuario;

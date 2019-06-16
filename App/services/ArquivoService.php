@@ -25,6 +25,7 @@ namespace App\Services
                 $arquivo_tmp = $this->data['imagem']['tmp_name'];
                 move_uploaded_file($arquivo_tmp, $destino);
             }
+        
             return $arquivo_name;
         }
 

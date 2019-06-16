@@ -1,8 +1,8 @@
 <?php
 namespace App\Controllers
 {   
-    
-    require_once($_SERVER['DOCUMENT_ROOT'] . '\\App\\services\\SolicitacaoService.php');
+    set_include_path($_SERVER['DOCUMENT_ROOT']);
+    require_once('App\\services\\SolicitacaoService.php');
     use App\Services\SolicitacaoService;
 
     session_start();    

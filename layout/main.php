@@ -8,4 +8,4 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <?php require_once($_SERVER['DOCUMENT_ROOT'] . '\\layout\\menu.php'); ?>    
+    <?php require_once('layout\\menu.php'); ?>    

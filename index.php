@@ -1,4 +1,4 @@
-<?php require_once($_SERVER['DOCUMENT_ROOT'] . '\\layout\\main.php'); ?>    
+<?php require_once( 'layout\\main.php'); ?>    
 
 <div id="carouselExampleControls" class="carousel slide img-apresentation" data-ride="carousel">
     <div class="carousel-inner">
@@ -22,4 +22,4 @@
     </a>
 </div>
 
-<?php require_once($_SERVER['DOCUMENT_ROOT'] . '\\layout\\footer.php'); ?>    
+<?php require_once('layout\\footer.php'); ?>    

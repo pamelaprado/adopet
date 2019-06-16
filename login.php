@@ -1,5 +1,5 @@
 <?php
-    require_once($_SERVER['DOCUMENT_ROOT'] . '\\layout\\main.php');
+    require_once( 'layout\\main.php');
     
     if(isset($_SESSION['usuario'])){
         header('location: inicio.php');
@@ -30,5 +30,5 @@
 </div>
 
 <?php
-    require_once($_SERVER['DOCUMENT_ROOT'] . '\\layout\\footer.php'); 
+    require_once('layout\\footer.php'); 
 ?>    

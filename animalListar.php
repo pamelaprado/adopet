@@ -1,6 +1,6 @@
 <?php
-    require_once($_SERVER['DOCUMENT_ROOT'] . '\\layout\\main.php');
-    require_once($_SERVER['DOCUMENT_ROOT'] . '\\App\\services\\AnimalService.php');
+    require_once( 'layout\\main.php');
+    require_once('App\\services\\AnimalService.php');
 
     use App\Services\AnimalService;
     
@@ -75,7 +75,7 @@
                                 echo '<td><p class="badge badge-danger">Reprovado</p></td>';
                             break;
                             case 3:
-                                echo '<td><p class="badge badge-success">Doado</p></td>';
+                                echo '<td><p class="badge badge-success">Adotado</p></td>';
                             break;                            
                         }
                         echo '<td>
@@ -106,4 +106,4 @@
     </div>
 </div>
 
-<?php require_once($_SERVER['DOCUMENT_ROOT'] . '\\layout\\footer.php'); ?>
+<?php require_once('layout\\footer.php'); ?>

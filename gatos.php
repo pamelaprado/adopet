@@ -1,6 +1,6 @@
 <?php
-    require_once($_SERVER['DOCUMENT_ROOT'] . '\\layout\\main.php');
-    require_once($_SERVER['DOCUMENT_ROOT'] . '\\App\\services\\AnimalService.php');
+    require_once( 'layout\\main.php');
+    require_once('App\\services\\AnimalService.php');
 
     use App\Services\AnimalService;
     
@@ -53,4 +53,4 @@
     </div>
 </div>
 
-<?php require_once($_SERVER['DOCUMENT_ROOT'] . '\\layout\\footer.php'); ?>    
+<?php require_once('layout\\footer.php'); ?>    

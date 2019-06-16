@@ -2,9 +2,9 @@
 
 namespace App\Controllers
 {   
-    
-    require_once($_SERVER['DOCUMENT_ROOT'] . '\\App\\services\\ArquivoService.php');
-    require_once($_SERVER['DOCUMENT_ROOT'] . '\\App\\services\\AnimalService.php');
+    set_include_path($_SERVER['DOCUMENT_ROOT']);
+    require_once('App\\services\\ArquivoService.php');
+    require_once('App\\services\\AnimalService.php');
     use App\Services\ArquivoService;
     use App\Services\AnimalService;
 

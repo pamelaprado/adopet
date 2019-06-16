@@ -1,4 +1,4 @@
-<?php require_once($_SERVER['DOCUMENT_ROOT'] . '\\layout\\main.php'); ?>    
+<?php require_once( 'layout\\main.php'); ?>    
 
 <div class="jumbotron jumbotron-fluid bg-warning">
     <div class="container">
@@ -23,4 +23,4 @@
     </div>
 </div>
 
-<?php require_once($_SERVER['DOCUMENT_ROOT'] . '\\layout\\footer.php'); ?>    
+<?php require_once('layout\\footer.php'); ?>    
